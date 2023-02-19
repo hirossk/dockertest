@@ -1,0 +1,20 @@
+version: '3'
+services:
+    tomcat:
+          build: ./tomcatees
+          image: tomcatees
+          container_name: tomcat
+          ports:
+              - 80:8080
+    h2db:
+          build: ./h2db
+          image: h2db
+          container_name: h2db
+          ports:
+              - 8082:8082
+
+networks:
+    default:
+          name: tomcat-h2db
+
+
